@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const studentRouter = require('./router/students')
 const db = require('./db/database')
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static('html'))
 app.use(express.json())
@@ -102,6 +103,6 @@ app.get('/distribution', (req, res) => {
     })
 })
 app.get
-app.listen(3000, () => {
-    console.log("Running");
-})
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
